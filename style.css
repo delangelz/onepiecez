@@ -1,0 +1,316 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* Estilos generales */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #fff;
+}
+
+main {
+    padding: 20px;
+}
+
+
+/* Contenedor principal del header */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    /* Empuja los elementos de las esquinas a los extremos */
+    align-items: center;
+    /* Centra verticalmente los elementos */
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #dee2e6;
+}
+
+
+/* Contenedor del título central */
+
+.header-center h1 {
+    margin: 0;
+    /* Quitamos el margen por defecto del h1 */
+    font-size: 2.5em;
+    /* Tamaño de fuente grande */
+    color: #333;
+}
+
+
+/* Contenedores de las esquinas */
+
+.header-left,
+.header-right {
+    /* Estos contenedores se ajustarán al contenido.
+       Puedes darles un ancho fijo si lo necesitas. */
+    flex-shrink: 0;
+    /* Evita que se encojan si el título es muy largo */
+}
+
+.header-left img {
+    height: 60px;
+    /* Ajusta la altura del logo */
+    width: auto;
+    /* Mantiene la proporción de la imagen */
+    display: block;
+    /* Ayuda a alinear y elimina espacios no deseados */
+}
+
+
+/* Estilos para el reloj digital */
+
+#digital-clock {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.8em;
+    color: #333;
+    font-weight: bold;
+}
+
+
+/* Contenedor centrado */
+
+.centered-container {
+    width: 80%;
+    /* Ancho del contenedor */
+    max-width: 1000px;
+    /* Ancho máximo para pantallas grandes */
+    margin: 40px auto;
+    /* Centra horizontalmente y añade margen vertical */
+    min-height: 100px;
+    /* Altura mínima */
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    /* Necesario para que 'resize' funcione */
+    resize: both;
+    /* Permite redimensionar horizontal y verticalmente */
+}
+
+
+/* Estilos para el formulario en el contenedor centrado */
+
+.centered-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Espacio entre los grupos de inputs */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    /* Alinea los botones al centro */
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+
+/* Estilo para los nuevos contenedores de contenido */
+
+.content-box {
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-height: 120px;
+}
+
+
+/* Contenedor principal para el layout de columnas */
+
+.columns-wrapper {
+    width: 80%;
+    /* Mismo ancho que el contenedor de arriba */
+    max-width: 1000px;
+    /* Mismo ancho máximo */
+    margin: 20px auto 0;
+    /* Centra horizontalmente y añade margen superior */
+    display: flex;
+    gap: 20px;
+    /* Espacio entre las columnas */
+    align-items: stretch;
+    /* Hace que las columnas tengan la misma altura */
+}
+
+
+/* Columna izquierda */
+
+.column-left {
+    display: flex;
+    /* Permite que el contenedor hijo se estire */
+    flex: 2;
+    /* Ocupa 2 partes del espacio, haciéndola más ancha */
+}
+
+
+/* Columna derecha */
+
+.column-right {
+    flex: 1;
+    /* Ocupa 1 parte del espacio */
+    display: flex;
+    flex-direction: column;
+    /* Apila los contenedores verticalmente */
+    gap: 20px;
+    /* Espacio entre los contenedores de la derecha */
+}
+
+.column-left .content-box {
+    flex-grow: 1;
+    /* Hace que el contenedor ocupe todo el alto de la columna */
+    padding: 0;
+    /* Quitamos el padding para que el video ocupe todo el espacio */
+}
+
+.column-left iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    /* Quitamos el borde por defecto del iframe */
+}
+
+.column-right .content-box:first-child {
+    padding: 0;
+    /* Quitamos el padding para que el carrusel ocupe todo el espacio */
+}
+
+.column-right .content-box:last-child {
+    padding: 0;
+    /* Hacemos que el enlace ocupe todo el espacio */
+}
+
+.column-right .content-box:last-child iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/* Estilos para el carrusel */
+
+.carousel-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #e9e9e9;
+    /* Un fondo para los slides */
+}
+
+.carousel-slide {
+    display: none;
+    height: 100%;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Asegura que la imagen cubra el contenedor sin deformarse */
+}
+
+
+/* Botones de navegación transparentes */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    opacity: 0;
+    /* Ocultos por defecto */
+    background-color: transparent;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* Mostrar botones al pasar el ratón sobre el carrusel */
+
+.carousel-container:hover .prev,
+.carousel-container:hover .next {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo semitransparente al mostrar */
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+/* Estilos para el pie de página */
+
+footer {
+    background-color: #888888;
+    /* Un tono de gris */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    /* Espacio sobre el footer */
+}

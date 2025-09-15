@@ -1,0 +1,59 @@
+/* Estilos generales */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #fff;
+}
+
+main {
+    padding: 20px;
+}
+
+
+/* Contenedor principal del header */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    /* Empuja los elementos de las esquinas a los extremos */
+    align-items: center;
+    /* Centra verticalmente los elementos */
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+
+/* Contenedor del título central */
+
+.header-center h1 {
+    margin: 0;
+    /* Quitamos el margen por defecto del h1 */
+    font-size: 2.5em;
+    /* Tamaño de fuente grande */
+    color: #333;
+}
+
+
+/* Contenedores de las esquinas */
+
+.header-left,
+.header-right {
+    /* Estos contenedores se ajustarán al contenido.
+       Puedes darles un ancho fijo si lo necesitas. */
+    flex-shrink: 0;
+    /* Evita que se encojan si el título es muy largo */
+}
+
+
+/* Estilos básicos para el formulario para que se vea mejor */
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
